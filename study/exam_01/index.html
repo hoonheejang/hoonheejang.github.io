@@ -19,6 +19,7 @@
         .wrap {padding: 30px;}
         .container {padding: 30px 0;}
         .box + .box {margin-top: 25px;}
+        .mark {padding: 0 4px; background-color: #fadbdb;}
     </style>
 </head>
 <body>
@@ -29,10 +30,10 @@
                 <h2>selector01</h2>
                 <ul>
                     <li>
-                        <a href="selector_js.html" class="link">selector01(js)</a>
+                        <a href="selector_js.html">selector01(js)</a>
                     </li>
                     <li>
-                        <a href="selector_jquery.html" class="link">selector01(jquery)</a>
+                        <a href="selector_jquery.html">selector01(jquery)</a>
                     </li>
                 </ul>
             </div>
@@ -41,10 +42,10 @@
                 <h2>selector02</h2>
                 <ul>
                     <li>
-                        <a href="selector2_js.html" class="link">selector02(js)</a>
+                        <a href="selector2_js.html">selector02(js)</a>
                     </li>
                     <li>
-                        <a href="selector2_jquery.html" class="link">selector02(jquery)</a>
+                        <a href="selector2_jquery.html">selector02(jquery)</a>
                     </li>
                 </ul>
             </div>
@@ -54,12 +55,13 @@
                 <div>
                     <dl>
                         <dt><strong>Array.join()</strong></dt>
-                        <dd>설명~~~~~</dd>
+                        <dd>- 배열의 모든 요소를 연결해서 하나의 문자열로 변환 시킨다.</dd>
+                        <dd>- 요소가 <span class="mark">undefined</span> 또는 <span class="mark">null</span> 값이면 빈 문자열로 변환</dd>
                     </dl>
                     <pre>
                         <code>
 &lt;script&gt;
-var test = [1, 2, 3];   // comment
+    var test = [1, 2, 3];   // comment
 &lt;/script&gt;
                         </code>
                     </pre>
@@ -70,12 +72,12 @@ var test = [1, 2, 3];   // comment
                 <div>
                     <dl>
                         <dt><strong>Array.reverse()</strong></dt>
-                        <dd>설명~~~~~</dd>
+                        <dd>배열 순서를 반전 시킨다.</dd>
                     </dl>
                     <pre>
                         <code>
 &lt;script&gt;
-var test = [1, 2, 3];   // comment
+    var test = [1, 2, 3];   // comment
 &lt;/script&gt;
                         </code>
                     </pre>
