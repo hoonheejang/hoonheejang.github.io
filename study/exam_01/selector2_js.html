@@ -3,7 +3,7 @@
 <html lang="ko">
 <head>
 <meta charset="utf-8">
-<title>exam</title>
+<title>selector02-JavaScript :: Study</title>
 <link rel="stylesheet" href="common.css" />
 </head>
 <body>
@@ -114,5 +114,19 @@
 	<!-- footer [e] -->
 </div>
 <!-- wrapper [e] -->
+
+<!-- JavaScript code [s] -->
+<script>
+	window.onload = function(){
+		var examObj1 = document.getElementsByClassName('exam_wrap')[0];
+		examObj1.getElementsByTagName('button')[0].onclick = function(){
+			var examChild = examObj1.getElementsByClassName('exam_q')[0].querySelectorAll('*');
+			for(var i = 0; i < examChild.length; i++){
+				examChild[i].style.backgroundColor = 'yellow';
+			}
+		};
+	}
+</script>
+<!-- JavaScript code [e] -->
 </body>
 </html>

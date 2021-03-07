@@ -378,10 +378,7 @@
                     <pre>
                         <code>
 &lt;script&gt;
-    var test_toString = [1, 2, 'a', 'b'];
-
-    console.log(test_toString.toString());
-    // output : '1,2,a,b'
+    var test_ = ;
 &lt;/script&gt;
                         </code>
                     </pre>
@@ -471,7 +468,7 @@
                 <div>
                     <dl>
                         <dt><strong>String.split()</strong></dt>
-                        <dd>- string을 지정한 구분자를 이용해 여러 string으로 나눈다.</dd>
+                        <dd>- string을 지정한 구분자를 이용해 여러 string으로 나눈 <span class="mark-color">Array를 반환</span>한다.</dd>
                     </dl>
                     <pre>
                         <code>
@@ -481,8 +478,8 @@
     var test_split2 = test_text.split('');
     var test_split3 = test_text.split();  // 문자열 전체를 배열로 가짐
 
-    console.log(test_split1[2]);
-    // output : 'is'
+    console.log(test_split1);
+    // output : ['Lorem', 'Ipsum', 'is', 'simply', 'dummy', 'text', 'of', 'the', 'printing', 'and', 'typesetting', 'industry']
     console.log(test_split2[2]);
     // output : 'r'
     console.log(test_split3);
@@ -498,7 +495,7 @@
                     <dl>
                         <dt><strong>String.search()</strong></dt>
                         <dd>- 정규식과 string 객체간에 매치되는 것을 찾는다.</dd>
-                        <dd>- 반환되는 값은 첫 번째로 매치되는 것의 index를 반환하고, 찾지 못하면 -1이 반환된다.</dd>
+                        <dd>- 반환되는 값은 <span class="mark-color">첫 번째로 매치되는 것의 index를 반환</span>하고, <span class="mark-color">찾지 못하면 -1이 반환</span>된다.</dd>
                     </dl>
                     <pre>
                         <code>
@@ -515,20 +512,100 @@
                         </code>
                     </pre>
                 </div>
+
+                <hr style="margin-bottom: 30px;">
+
+                <div>
+                    <dl>
+                        <dt><strong>String.match()</strong></dt>
+                        <dd>- string이 정규식과 매치되는 것을 찾는다.</dd>
+                        <dd>- 찾은 값은 <span class="mark-color">Array로 반환</span>된다.</dd>
+                    </dl>
+                    <pre>
+                        <code>
+&lt;script&gt;
+    var test_text = 'abs hjdd cfy';
+    var test_regex1 = /[A-D]/gi;
+    var text_match = test_text.match(test_regex1);
+
+    console.log(text_match);
+    // output : ['a,' 'b', 'd', 'd', 'c']
+&lt;/script&gt;
+                        </code>
+                    </pre>
+                </div>
+
+                <hr style="margin-bottom: 30px;">
+
+                <div>
+                    <dl>
+                        <dt><strong>String.trim()</strong></dt>
+                        <dd>- string의 양쪽 끝 공백을 제거하고 <span class="mark-color">string을 반환</span>한다.</dd>
+                        <dd>- 공백은 공백문자와 개행문자 모두를 의미한다.</dd>
+                    </dl>
+                    <pre>
+                        <code>
+&lt;script&gt;
+    var test_trim = '   Lorem Ipsum is simply dummy text    ';
+
+    console.log(test_trim);
+    // output : '   Lorem Ipsum is simply dummy text    '
+    console.log(test_trim.trim());
+    // output : 'Lorem Ipsum is simply dummy text'
+&lt;/script&gt;
+                        </code>
+                    </pre>
+                </div>
+
+                <hr style="margin-bottom: 30px;">
+
+                <div>
+                    <dl>
+                        <dt><strong>String.indexOf()</strong></dt>
+                        <dd></dd>
+                    </dl>
+                    <pre>
+                        <code>
+&lt;script&gt;
+    var test_ = ;
+&lt;/script&gt;
+                        </code>
+                    </pre>
+                </div>
+            </div>
+
+            <div class="box">
+                <h2>Prototype - Object</h2>
+                <div>
+                    <dl>
+                        <dt><strong>Object.hasOwnProperty()</strong></dt>
+                        <dd></dd>
+                    </dl>
+                    <pre>
+                        <code>
+&lt;script&gt;
+    var test_ = ;
+&lt;/script&gt;
+                        </code>
+                    </pre>
+                </div>
             </div>
         </div>
     </div>
 
 
     <script>
-            var test_text = 'Lorem Ipsum is simply dummy text';
-    var test_regex1 = /[A-Z]/g;
-    var test_regex2 = /[!]/g;
+            var test_text = 'Lorem Ipsum is simply dummy text of the printing and typesetting industry';
+    var test_split1 = test_text.split(' ');  // 공백으로 나눔
+    var test_split2 = test_text.split('');
+    var test_split3 = test_text.split();  // 문자열 전체를 배열로 가짐
 
-    console.log(test_text.match(test_regex1));
-    // output : 0
-    console.log(test_text.match(test_regex2));
-    // output : -1
+    console.log(test_split1);
+    // output : ['Lorem', 'Ipsum', 'is', 'simply', 'dummy', 'text', 'of', 'the', 'printing', 'and', 'typesetting', 'industry']
+    console.log(test_split2[2]);
+    // output : 'r'
+    console.log(test_split3);
+    // output : ['Lorem Ipsum is simply dummy text of the printing and typesetting industry']
     </script>
 </body>
 </html>
