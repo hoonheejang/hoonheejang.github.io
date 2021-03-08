@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1주차 :: Study</title>
+    <link rel="stylesheet" href="../highlight/styles/atom-one-dark.css">
+    <script src="../highlight/highlight.pack.js"></script>
+    <script>hljs.highlightAll();</script>
+    <style>
+        * {margin: 0; padding: 0;}
+        li {list-style: none;}
+        h1 {text-align: center;}
+        h2 {margin-bottom: 10px; color: gray;}
+        a:not(.refer) {display: block; padding: 6px 10px; color: inherit; text-decoration: none;}
+        a:not(.refer):hover {background-color: #ddd;}
+        dd {margin-top: 3px; font-size: 14px; color: #666;}
+        .wrap {padding: 30px;}
+        .container {padding: 30px 0;}
+        .box + .box {margin-top: 25px;}
+        .list-wrap {border-top: 1px solid #ccc;}
+        .list {border-bottom: 1px solid #ccc;}
+        .sub-list-wrap {padding: 0 10px 5px;}
+        .sub-list {font-size: 12px;}
+        .mark {padding: 0 4px; background-color: #e9e9e9; border-radius: 4px;}
+        .mark-color {padding: 0 4px; background-color: #fadbdb; border-radius: 4px;}
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <h1>selector</h1>
+        <div class="container">
+            <div class="box">
+                <h2>selector01</h2>
+                <ul class="list-wrap">
+                    <li class="list">
+                        <a href="selector_js.html">selector01(js)</a>
+                    </li>
+                    <li class="list">
+                        <a href="selector_jquery.html">selector01(jquery)</a>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="box">
+                <h2>selector02</h2>
+                <ul class="list-wrap">
+                    <li class="list">
+                        <a href="selector2_js.html">selector02(js)</a>
+                    </li>
+                    <li class="list">
+                        <a href="selector2_jquery.html">selector02(jquery)</a>
+                    </li>
+                </ul>
+            </div>
+                
+            <div class="box">
+                <h2>Prototype - Array</h2>
+                <div>
+                    <dl>
+                        <dt><strong>Array.join()</strong></dt>
+                        <dd>- 배열의 모든 요소를 연결해서 <span class="mark-color">하나의 string으로 변환</span>한다.</dd>
+                        <dd>- 요소가 <span class="mark">undefined</span> 또는 <span class="mark">null</span> 값이면 빈 문자열로 변환</dd>
+                    </dl>
+                    <pre>
+                        <code>
+&lt;script&gt;
+    var test_join = ['바람', '비', '불'];
+    var test_join1 = test.join();    // test_join1에 '바람,비,불' 대입
+    var test_join2 = test.join(', ');    // test_join2에 '바람, 비, 불' 대입
+    var test_join3 = test.join(' + ');    // test_join3에 '바람 + 비 + 불' 대입
+    var test_join4 = test.join('');    // test_join4에 '바람비불' 대입
+&lt;/script&gt;
+                        </code>
+                    </pre>
+                </div>
+
+                <hr style="margin-bottom: 30px;">
+
+                <div>
+                    <dl>
+                        <dt><strong>Array.reverse()</strong></dt>
+                        <dd>- 배열 순서를 반전 시킨다.</dd>
+                    </dl>
+                    <pre>
+                        <code>
+&lt;script&gt;
+    var test_reverse = [1, 2, 3];
+
+    test_reverse.reverse();
+    console.log(test_reverse);
+    // output : [3, 2, 1]
+&lt;/script&gt;
+                        </code>
+                    </pre>
+                </div>
+
+                <hr style="margin-bottom: 30px;">
+
+                <div>
+                    <dl>
+                        <dt><strong>Array.sort()</strong></dt>
+                        <dd>- 배열의 요소를 적절하게 정렬한 후 정렬된 배열을 반환한다.</dd>
+                        <dd>
+                            - 기본 정렬 순서는 문자열의 유니코드 코드 포인트이며,
+                            <a href="https://en.wikipedia.org/wiki/Sorting_algorithm#Stability" target="_blank" class="refer">stable sort</a>가 아닐 수 있다.
+                        </dd>
+                    </dl>
+                    <pre>
+                        <code>
+&lt;script&gt;
+    var test_sort1 = ['March', 'Jan', 'Feb', 'Dec'];
+
+    test_sort1.sort();
+    console.log(test_sort1);
+    // output : ['Dec', 'Feb', 'Jan', 'March']
+
+
+    var test_sort2 = [1, 30, 4, 21, 10000];
+
+    test_sort2.sort();
+    console.log(test_sort2);
+    // output : [1, 10000, 21, 30, 4]
+&lt;/script&gt;
+                        </code>
+                    </pre>
+                </div>
+
+                <hr style="margin-bottom: 30px;">
+
+                <div>
+                    <dl>
+                        <dt><strong>Array.concat()</strong></dt>
+                        <dd>- 인자로 주어진 배열 또는 값들을 기존 배열뒤에 순서대로 붙여 새 배열을 반환한다.</dd>
+                    </dl>
+                    <pre>
+                        <code>
+&lt;script&gt;
+    var test_concat1 = ['a', 'b', 'c'];
+    var test_concat2 = ['d', 'e', 'f'];
+    var test_concat3 = test_concat1.concat(test_concat2);
+
+    console.log(test_concat3);
+    // output : ['a', 'b', 'c', 'd', 'e', 'f']
+&lt;/script&gt;
+                        </code>
+                    </pre>
+                </div>
+
+                <hr style="margin-bottom: 30px;">
+
+                <div>
+                    <dl>
+                        <dt><strong>Array.slice()</strong></dt>
+                        <dd>- slice(begin, end) 값을 반환한다. (end는 포함하지 않음)</dd>
+                        <dd>
+                            - <strong>begin</strong>
+                            <ul class="sub-list-wrap">
+                                <li class="sub-list">
+                                    ㄴ undefined 일 경우, 0번 index부터 반환
+                                </li>
+                                <li class="sub-list">
+                                    ㄴ 배열의 길이보다 클 경우, 빈 배열 반환
+                                </li>
+                                <li class="sub-list">
+                                    ㄴ 음수 인덱스는 배열 끝에서부터의 길이를 나타냄
+                                </li>
+                            </ul>
+                        </dd>
+                        <dd>
+                            - <strong>end</strong>
+                            <ul class="sub-list-wrap">
+                                <li class="sub-list">
+                                    ㄴ end 인덱스는 제외하고 반환
+                                </li>
+                                <li class="sub-list">
+                                    ㄴ end를 생략하거나 배열의 길이보다 클 경우, 배열의 끝까지 반환
+                                </li>
+                                <li class="sub-list">
+                                    ㄴ 음수 인덱스는 배열 끝에서부터의 길이를 나타냄
+                                </li>
+                            </ul>
+                        </dd>
+                    </dl>
+                    <pre>
+                        <code>
+&lt;script&gt;
+    var test_slice1 = ['a', 'b', 'c', 'd', 'e', 'f'];
+
+    console.log(test_slice1.slice(1));
+    // output : ['b', 'c', 'd', 'e', 'f']
+    console.log(test_slice1.slice(3, 5));
+    // output : ['d', 'e']
+    console.log(test_slice1.slice(-2));
+    // output : ['e', 'f']
+&lt;/script&gt;
+                        </code>
+                    </pre>
+                </div>
+
+                <hr style="margin-bottom: 30px;">
+
+                <div>
+                    <dl>
+                        <dt><strong>Array.splice()</strong></dt>
+                        <dd>- splice(start, deleteCount, item1, item2, ...) 값을 반환한다.</dd>
+                        <dd>
+                            - <strong>start</strong>
+                            <ul class="sub-list-wrap">
+                                <li class="sub-list">
+                                    ㄴ splice()를 시작할 인덱스
+                                </li>
+                                <li class="sub-list">
+                                    ㄴ 배열의 길이보다 클 경우, 시작 인덱스는 배열의 길이로 정함
+                                </li>
+                                <li class="sub-list">
+                                    ㄴ 음수의 절대값이 배열의 길이보다 클 경우, 시작 인덱스는 0
+                                </li>
+                            </ul>
+                        </dd>
+                        <dd>
+                            - <strong>deleteCount</strong>
+                            <ul class="sub-list-wrap">
+                                <li class="sub-list">
+                                    ㄴ splice()에서 제거할 요소의 수
+                                </li>
+                                <li class="sub-list">
+                                    ㄴ 생략 또는 시작 인덱스보다 클 경우, start부터 모든 요소를 제거
+                                </li>
+                            </ul>
+                        </dd>
+                        <dd>
+                            - <strong>item1, ...</strong>
+                            <ul class="sub-list-wrap">
+                                <li class="sub-list">
+                                    ㄴ splice()에서 추가할 요소
+                                </li>
+                            </ul>
+                        </dd>
+                    </dl>
+                    <pre>
+                        <code>
+&lt;script&gt;
+    var test_splice1 = ['a', 'b', 'c', 'd', 'e', 'f'];
+
+    test_splice1.splice(2, 1, 's');
+    console.log(test_splice1);
+    // output : ['a', 'b', 's', 'd', 'e', 'f']
+&lt;/script&gt;
+                        </code>
+                    </pre>
+                </div>
+
+                <hr style="margin-bottom: 30px;">
+
+                <div>
+                    <dl>
+                        <dt><strong>Array.push()</strong></dt>
+                        <dd>- 배열의 끝에 요소를 추가하고, <span class="mark-color">새 lenght를 반환</span>한다.</dd>
+                    </dl>
+                    <pre>
+                        <code>
+&lt;script&gt;
+    var test_push1 = ['a', 'b', 'c'];
+
+    console.log(test_push1.push('1', '2'));
+    // output : 5
+    console.log(test_push1);
+    // output : ['a', 'b', 'c', '1', '2']
+&lt;/script&gt;
+                        </code>
+                    </pre>
+                </div>
+
+                <hr style="margin-bottom: 30px;">
+
+                <div>
+                    <dl>
+                        <dt><strong>Array.pop()</strong></dt>
+                        <dd>- 배열의 끝에 요소를 제거하고, <span class="mark-color">제거된 요소를 반환</span>한다.</dd>
+                        <dd>- 빈 배열에 pop() 메서드를 사용할 경우 <span class="mark-color">undefined를 반환</span>한다.</dd>
+                    </dl>
+                    <pre>
+                        <code>
+&lt;script&gt;
+    var test_pop = ['a', 'b', 'c'];
+
+    console.log(test_pop.pop());
+    // output : 'c'
+    console.log(test_pop);
+    // output : ['a', 'b']
+&lt;/script&gt;
+                        </code>
+                    </pre>
+                </div>
+
+                <hr style="margin-bottom: 30px;">
+
+                <div>
+                    <dl>
+                        <dt><strong>Array.shift()</strong></dt>
+                        <dd>- 배열의 첫 번째 요소를 제거하고, <span class="mark-color">제거된 요소를 반환</span>한다</dd>
+                        <dd>- 빈 배열에 shift() 메서드를 사용할 경우 <span class="mark-color">undefined를 반환</span>한다.</dd>
+                    </dl>
+                    <pre>
+                        <code>
+&lt;script&gt;
+    var test_shift = ['a', 'b', 'c'];
+
+    console.log(test_shift.shift());
+    // output : 'a'
+    console.log(test_shift);
+    // output : ['b', 'c']
+&lt;/script&gt;
+                        </code>
+                    </pre>
+                </div>
+
+                <hr style="margin-bottom: 30px;">
+
+                <div>
+                    <dl>
+                        <dt><strong>Array.unshift()</strong></dt>
+                        <dd>- 배열의 맨 앞에 요소를 추가하고, <span class="mark-color">새 lenght를 반환</span>한다.</dd>
+                    </dl>
+                    <pre>
+                        <code>
+&lt;script&gt;
+    var test_unshift = ['a', 'b', 'c'];
+
+    console.log(test_unshift.unshift('s'));
+    // output : 4
+    console.log(test_unshift);
+    // output : ['s', 'a', 'b', 'c']
+&lt;/script&gt;
+                        </code>
+                    </pre>
+                </div>
+
+                <hr style="margin-bottom: 30px;">
+
+                <div>
+                    <dl>
+                        <dt><strong>Array.toString()</strong></dt>
+                        <dd>- 배열을 <span class="mark-color">하나의 string으로 반환</span>한다.</dd>
+                    </dl>
+                    <pre>
+                        <code>
+&lt;script&gt;
+    var test_toString = [1, 2, 'a', 'b'];
+
+    console.log(test_toString.toString());
+    // output : '1,2,a,b'
+&lt;/script&gt;
+                        </code>
+                    </pre>
+                </div>
+
+                <hr style="margin-bottom: 30px;">
+
+                <div>
+                    <dl>
+                        <dt><strong>Array.indexOf()</strong></dt>
+                        <dd>- 배열에서 찾고자하는 요소의 첫 번째 index를 반환하고, 없다면 -1을 반환한다.</dd>
+                        <dd>- <span class="mark-color">엄격한 동등성(===)</span> 을 사용하여 비교한다.</dd>
+                        <dd>- array.indexOf(searchElement[, fromIndex])</dd>
+                        <dd>
+                            - <strong>searchElement</strong>
+                            <ul class="sub-list-wrap">
+                                <li class="sub-list">
+                                    ㄴ 배열에서 찾을 요소
+                                </li>
+                            </ul>
+                        </dd>
+                        <dd>
+                            - <strong>fromIndex</strong>
+                            <ul class="sub-list-wrap">
+                                <li class="sub-list">
+                                    ㄴ 배열에서 찾기 시작할 index <span class="mark">(default = 0)</span>
+                                </li>
+                                <li class="sub-list">
+                                    ㄴ 배열의 길이보다 크거나 같다면 -1이 반환된다.
+                                </li>
+                                <li class="sub-list">
+                                    ㄴ index가 음수라면 배열의 끝에서 offset 값으로 사용되지만 검색은 앞에서 뒤로한다.
+                                </li>
+                                <li class="sub-list">
+                                    ㄴ 계산된 index가 0보다 작다면 배열 전체를 검색한다.
+                                </li>
+                            </ul>
+                        </dd>
+                    </dl>
+                    <pre>
+                        <code>
+&lt;script&gt;
+    var test_index = ['a', 'b', 'c', 'b', 'f'];
+
+    console.log(test_index.indexOf('a'));
+    // output : 0
+    console.log(test_index.indexOf('b', 2));
+    // output : 3
+    console.log(test_index.indexOf('b', -1));
+    // output : -1
+    console.log(test_index.indexOf('b', -2));
+    // output : 3
+    console.log(test_index.indexOf('b', -4));
+    // output : 1
+&lt;/script&gt;
+                        </code>
+                    </pre>
+                </div>
+            </div>
+
+            <div class="box">
+                <h2>Prototype - String</h2>
+                <div>
+                    <dl>
+                        <dt><strong>String.replace()</strong></dt>
+                        <dd>- 어떠한 패턴이 일치하는 일부 또는 모든 부분을 교체하여 <span class="mark-color">새 string으로 반환</span>한다.</dd>
+                        <dd>- Global replace는 정규식으로만 수행할 수 있다.</dd>
+                    </dl>
+                    <pre>
+                        <code>
+&lt;script&gt;
+    var test_replace1 = 'Apple, Lemon, Orange, Apple';
+    var test_replace2 = /Apple/i;
+
+    console.log(test_replace1.replace('Apple', 'Banana'));
+    console.log(test_replace1.replace(test_replace2, 'Banana'));
+    // output : 'Banana, Lemon, Orange, Apple'
+
+    // Global
+    var test_global = /Apple/gi;
+    var test_replace3 = 'Apple, Lemon, Orange, Apple';
+    var test_result = test_replace3.replace(test_global, 'Banana');
+
+    console.log(test_result);
+    // output : 'Banana, Lemon, Orange, Banana'
+&lt;/script&gt;
+                        </code>
+                    </pre>
+                </div>
+
+                <hr style="margin-bottom: 30px;">
+
+                <div>
+                    <dl>
+                        <dt><strong>String.slice()</strong></dt>
+                        <dd>- string.slice(begin, end)을 추출하여 <span class="mark-color">새 string으로 반환</span>한다.</dd>
+                        <dd>
+                            - <strong>begin</strong>
+                            <ul class="sub-list-wrap">
+                                <li class="sub-list">
+                                    ㄴ undefined 일 경우, 0번 index부터 반환
+                                </li>
+                                <li class="sub-list">
+                                    ㄴ 배열의 길이보다 클 경우, 빈 배열 반환
+                                </li>
+                                <li class="sub-list">
+                                    ㄴ 음수 인덱스는 배열 끝에서부터의 길이를 나타냄
+                                </li>
+                            </ul>
+                        </dd>
+                        <dd>
+                            - <strong>end</strong>
+                            <ul class="sub-list-wrap">
+                                <li class="sub-list">
+                                    ㄴ end 인덱스는 제외하고 반환
+                                </li>
+                                <li class="sub-list">
+                                    ㄴ end를 생략하거나 배열의 길이보다 클 경우, 배열의 끝까지 반환
+                                </li>
+                            </ul>
+                        </dd>
+                    </dl>
+                    <pre>
+                        <code>
+&lt;script&gt;
+    var test_slice1 = 'Lorem Ipsum is simply dummy text of the printing and typesetting industry';
+
+    console.log(test_slice1.slice(0, 2));
+    // output : 'Lo'
+    console.log(test_slice1.slice(1, 999));
+    // output : 'orem Ipsum is simply dummy text of the printing and typesetting industry'
+    console.log(test_slice1.slice(-2));
+    // output : 'ry'
+&lt;/script&gt;
+                        </code>
+                    </pre>
+                </div>
+
+                <hr style="margin-bottom: 30px;">
+
+                <div>
+                    <dl>
+                        <dt><strong>String.split()</strong></dt>
+                        <dd>- string을 지정한 구분자를 이용해 여러 string으로 나눈 <span class="mark-color">Array를 반환</span>한다.</dd>
+                    </dl>
+                    <pre>
+                        <code>
+&lt;script&gt;
+    var test_text = 'Lorem Ipsum is simply dummy text of the printing and typesetting industry';
+    var test_split1 = test_text.split(' ');  // 공백으로 나눔
+    var test_split2 = test_text.split('');
+    var test_split3 = test_text.split();  // 문자열 전체를 배열로 가짐
+
+    console.log(test_split1);
+    // output : ['Lorem', 'Ipsum', 'is', 'simply', 'dummy', 'text', 'of', 'the', 'printing', 'and', 'typesetting', 'industry']
+    console.log(test_split2[2]);
+    // output : 'r'
+    console.log(test_split3);
+    // output : ['Lorem Ipsum is simply dummy text of the printing and typesetting industry']
+&lt;/script&gt;
+                        </code>
+                    </pre>
+                </div>
+
+                <hr style="margin-bottom: 30px;">
+
+                <div>
+                    <dl>
+                        <dt><strong>String.search()</strong></dt>
+                        <dd>- 정규식과 string 객체간에 매치되는 것을 찾는다.</dd>
+                        <dd>- 반환되는 값은 <span class="mark-color">첫 번째로 매치되는 것의 index를 반환</span>하고, <span class="mark-color">찾지 못하면 -1이 반환</span>된다.</dd>
+                    </dl>
+                    <pre>
+                        <code>
+&lt;script&gt;
+    var test_text = 'Lorem Ipsum is simply dummy text';
+    var test_regex1 = /[A-Z]/g;
+    var test_regex2 = /[!]/g;
+
+    console.log(test_text.search(test_regex1));
+    // output : 0
+    console.log(test_text.search(test_regex2));
+    // output : -1
+&lt;/script&gt;
+                        </code>
+                    </pre>
+                </div>
+
+                <hr style="margin-bottom: 30px;">
+
+                <div>
+                    <dl>
+                        <dt><strong>String.match()</strong></dt>
+                        <dd>- string이 정규식과 매치되는 것을 찾는다.</dd>
+                        <dd>- 찾은 값은 <span class="mark-color">Array로 반환</span>된다.</dd>
+                    </dl>
+                    <pre>
+                        <code>
+&lt;script&gt;
+    var test_text = 'abs hjdd cfy';
+    var test_regex1 = /[A-D]/gi;
+    var text_match = test_text.match(test_regex1);
+
+    console.log(text_match);
+    // output : ['a,' 'b', 'd', 'd', 'c']
+&lt;/script&gt;
+                        </code>
+                    </pre>
+                </div>
+
+                <hr style="margin-bottom: 30px;">
+
+                <div>
+                    <dl>
+                        <dt><strong>String.trim()</strong></dt>
+                        <dd>- string의 양쪽 끝 공백을 제거하고 <span class="mark-color">string을 반환</span>한다.</dd>
+                        <dd>- 공백은 공백문자와 개행문자 모두를 의미한다.</dd>
+                    </dl>
+                    <pre>
+                        <code>
+&lt;script&gt;
+    var test_trim = '   Lorem Ipsum is simply dummy text    ';
+
+    console.log(test_trim);
+    // output : '   Lorem Ipsum is simply dummy text    '
+    console.log(test_trim.trim());
+    // output : 'Lorem Ipsum is simply dummy text'
+&lt;/script&gt;
+                        </code>
+                    </pre>
+                </div>
+
+                <hr style="margin-bottom: 30px;">
+
+                <div>
+                    <dl>
+                        <dt><strong>String.indexOf()</strong></dt>
+                        <dd>- string 객체에서 찾으려는 값의 첫 번째 index를 반환하고, 없다면 -1을 반환한다.</dd>
+                        <dd>- <span class="mark-color">대소문자를 구분</span>한다.</dd>
+                        <dd>- string.indexOf(searchElement[, fromIndex])</dd>
+                        <dd>
+                            - <strong>searchElement</strong>
+                            <ul class="sub-list-wrap">
+                                <li class="sub-list">
+                                    ㄴ 배열에서 찾을 요소, 값이 없다면 undefined를 찾는 string으로 사용한다.
+                                </li>
+                            </ul>
+                        </dd>
+                        <dd>
+                            - <strong>fromIndex</strong>
+                            <ul class="sub-list-wrap">
+                                <li class="sub-list">
+                                    ㄴ 배열에서 찾기 시작할 index <span class="mark">(default = 0)</span>
+                                </li>
+                                <li class="sub-list">
+                                    ㄴ 배열의 길이보다 크거나 같다면 -1이 반환된다.
+                                </li>
+                                <li class="sub-list">
+                                    ㄴ index가 음수라면 전체 문자열을 찾는다.
+                                </li>
+                            </ul>
+                        </dd>
+                    </dl>
+                    <pre>
+                        <code>
+&lt;script&gt;
+    var test_index = 'Lorem Ipsum is simply dummy text';
+
+    console.log(test_index.indexOf('I', 2));
+    // output : 6
+    console.log(test_index.indexOf('l'));
+    // output : 19
+    console.log(test_index.indexOf('is'));
+    // output : 12
+&lt;/script&gt;
+                        </code>
+                    </pre>
+                </div>
+            </div>
+
+            <div class="box">
+                <h2>Prototype - Object</h2>
+                <div>
+                    <dl>
+                        <dt><strong>Object.hasOwnProperty()</strong></dt>
+                        <dd>- 찾으려는 property의 유무를 <span class="mark-color">boolean 값</span>으로 반환한다.</dd>
+                        <dd>- 상속된 property에 대해서는 false값을 반환한다.</dd>
+                    </dl>
+                    <pre>
+                        <code>
+&lt;script&gt;
+    var test_property = {
+        name : 'A',
+        age : 10
+    };
+
+    console.log(test_property.hasOwnProperty('name'));
+    // output : true
+    console.log(test_property.hasOwnProperty('gender'));
+    // output : false
+&lt;/script&gt;
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
